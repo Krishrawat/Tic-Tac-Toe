@@ -89,7 +89,6 @@ const gameBoard = (() => {
   const autoMark = () => {
     let a = Math.floor(Math.random() * 3);
     let b = Math.floor(Math.random() * 3);
-    console.log(a, b);
     mark(a, b);
   };
 
