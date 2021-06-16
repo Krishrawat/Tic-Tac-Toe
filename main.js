@@ -1,6 +1,6 @@
 "use strict";
 
-let playerChoice="X";
+let playerChoice = "X";
 const gameBoard = (() => {
   let board = [];
   let count = 0;
@@ -9,7 +9,7 @@ const gameBoard = (() => {
     let temp = ["", "", ""];
     board.push(temp);
   }
-  
+
   const check = () => {
     let ok = false;
     for (let i = 0; i < 3; i++) {
@@ -86,12 +86,12 @@ const gameBoard = (() => {
     count = 0;
   };
 
-  const autoMark=()=>{
-    let a=Math.floor(Math.random()*3);
-    let b=Math.floor(Math.random()*3);
-    console.log(a,b);
-    mark(a,b);
-  }
+  const autoMark = () => {
+    let a = Math.floor(Math.random() * 3);
+    let b = Math.floor(Math.random() * 3);
+    console.log(a, b);
+    mark(a, b);
+  };
 
   return {
     autoMark,
@@ -114,14 +114,13 @@ erase.addEventListener("click", (e) => {
 });
 const options = document.querySelector(".options");
 options.addEventListener("click", (e) => {
-  let divClassName=e.target.className;
-  if(divClassName==="option-X" && playerChoice==="O"){
+  let divClassName = e.target.className;
+  if (divClassName === "option-X" && playerChoice === "O") {
     gameBoard.erase();
-    playerChoice="X";
-  }
-  else if(divClassName==="option-O" && playerChoice==="X"){
+    playerChoice = "X";
+  } else if (divClassName === "option-O" && playerChoice === "X") {
     gameBoard.erase();
     gameBoard.autoMark();
-    playerChoice="O"
+    playerChoice = "O";
   }
 });
